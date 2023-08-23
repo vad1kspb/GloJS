@@ -11,24 +11,40 @@
  Решить задачу с помощью нескольких тернарных операторов, без использования if или switch
 3). Запушить проект в репозиторий для усложненных заданий на GitHub
  */
-let lang = ["ru", "en"];
-let namePerson;
+
+const lang = ["ru", "en"];
+let namePerson = "Артем";
+// let namePerson = "Александр";
+// let namePerson = "Петя";
+let langIndex = 0;
 
 let date = new Date();
-let dayWeekRu = ["вс","пн","вт", "ср", "чт", "пт", "сб"];
-let dayWeekEn = ["Sun","Mon","Tue", "Wed", "Thu", "Fri", "Sat"];
+const dayWeekRu = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+const dayWeekEn = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const langWeek = [
+  ["вс", "пн", "вт", "ср", "чт", "пт", "сб"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+]
 
-if (lang[] === "ru") {
+// a) через if
+if (lang[langIndex] === "ru") {
   console.log(dayWeekRu[date.getDay()]);
-} else if (lang[] === "en") {
+} else if (lang[langIndex] === "en") {
   console.log(dayWeekEn[date.getDay()]);
 }
 
-switch(lang[]) {
-  case "ru" : 
+// b) через switch-case
+switch (lang[langIndex]) {
+  case "ru":
     console.log(dayWeekRu[date.getDay()]);
     break;
-  case "en" : 
+  case "en":
     console.log(dayWeekEn[date.getDay()]);
     break;
-} 
+}
+
+// c) через многомерный массив без ифов и switch.
+console.log(langWeek[langIndex][date.getDay()]);
+
+namePerson === "Артем" ? console.log("директор") : (namePerson === "Александр") ? console.log("преподаватель") : console.log("студент");
+
